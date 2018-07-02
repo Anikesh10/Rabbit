@@ -1,0 +1,752 @@
+@charset "utf-8";
+
+/*------------------------------------------------------------------
+  [Table of contents]
+  * To keep an overview of structure of your code, we make use of table of 
+  * content. Table of content is use display the overall tree structure of your
+  * Layout. 
+  * (NOTE: Remove this commented code once you start developing the code.
+  * Remove the following table of content and add your own as this is just and 
+  * example to let you know)
+
+  1. CSS Reset Code
+    1.1. Eric Meyers Reset/HTML5 display-role reset for older browsers
+    1.2. Clear Fix
+    1.3. Font class declaration
+  2. Body
+  3. Header / .header
+    2.1. Navigation / .navbar
+  4. Content / .content
+    4.1. Left column / .leftcolumn
+    4.2. Right column / .rightcolumn
+    4.3. Sidebar / .sidebar
+      4.3.1. RSS / .rss
+      4.3.2. Search / .search
+      4.3.3. Boxes / .box
+      4.3.4. Sideblog / .sideblog
+      4.3.5. Advertisements / .ads
+  5. Footer / .footer
+  ------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+  [Color codes]
+  * Mention the color code you have used in your html document for the respective
+  * elements given as follow. 
+  * (NOTE: Remove this commented code once you start developing the code. 
+  * Remove the following color code and add your own as this is just and 
+  * example to let you know)
+
+  Header nav: #e5e5df (Cararra)
+  Header nav a (hover): #fff (white)
+  Header nav a (active): #fff (white)
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+  [Typography]
+  * Mention the Typography you have used in your html document for the respective
+  * elements given as follow.
+  * (NOTE: Remove this commented code once you start developing the code. 
+  * Remove the following typography and add your own as this is just and 
+  * example to let you know)
+
+  Header nav a: 16px 'Futura Bold', 'Gill Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  View-register li a : 12px 'Futura Bold', 'Gill Sans', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  -------------------------------------------------------------------*/
+
+/* ==========================================================================
+   1. CSS Reset Code
+   ========================================================================== */
+
+/* 1.1. Eric Meyers Reset
+   http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+   ========================================================================== */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
+ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure,
+figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, main {
+  display: block;
+}
+
+/* Force scrollbar */
+html { overflow-y: scroll; }
+
+/* Align radios and text inputs with their label */
+
+input[type='radio'] { vertical-align: text-bottom; }
+
+/* Hand cursor on clickable input elements */
+label,
+input[type='button'],
+input[type='submit'],
+button {
+  cursor: pointer;
+}
+
+strong {
+  font-weight: bold;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+em { font-style: italic; }
+
+img {
+  border: 0;
+  vertical-align: middle;
+}
+
+sub,
+sup {
+  vertical-align: baseline;
+  position: relative;
+  font-size: 55%;
+  line-height: 0;
+}
+
+sup { top: -.7em; }
+
+sub { bottom: -.25em; }
+
+/* 1.2. Clear Fix
+   ========================================================================== */
+
+.cf:before,
+.cf:after {
+  display: table;
+  content: " ";
+}
+
+.cf:after { clear: both; }
+
+/* 1.3. Font class declaration
+   ========================================================================== */
+/*
+ * Mention the font property (eg: font-family, font-size, font-weight, font-style
+ * etc) that have been commonly used in the html document. Make a class of it and
+ * apply to the element wherever it is needed. If any single property in changed,
+ * then override only that property in the particular class which is used for the
+ * element.
+ * (NOTE: Remove this commented code once you start 
+ * developing the code. Remove the following font class and add your own
+ * as this is just and example to let you know. If there is only one font family
+ * followed throughout the site, then menstion the font property in body. No need
+ * of creating an extra class for it) */
+
+body { 
+  color: #242a30;
+  font-family: 'Raleway', sans-serif; 
+}
+
+p:first-letter{ text-transform: uppercase; }
+a:first-letter{ text-transform: uppercase; }
+
+a {
+  box-sizing: border-box;
+  color: #438e29;
+  cursor: pointer;
+  text-decoration: none;
+  transition: ease-in 0.2s;
+}
+
+img { width: 100%; }
+
+ul li { list-style: none; }
+
+section { padding: 50px 0; }
+
+.subheading {
+  padding: 5% 17%;
+  font-size: 20px;
+  line-height: 36px; 
+}
+
+.wrapper {
+  max-width: 1200px; 
+  margin:auto;
+ }
+
+ .txt-bold {
+  font-weight: bold;
+ }
+
+/*---- Header section----*/
+
+header { border-bottom: 1px solid #ccc; }
+
+header h1 { 
+  max-width: 160.5px;
+  padding: 14px 0 23px;
+  display: inline-block;
+}
+
+header .head-btns {
+  width: 24%;
+  padding: 13px 0;
+  float: right;
+  line-height: 16px;
+  text-align: right;
+}
+
+header .head-btns a {
+  display: inline-block;
+  color:#438e29;
+  font-size: 15px;
+  letter-spacing: 0.3px;
+}
+
+header .btn { margin-right: 12px; }
+header .btn:first-letter { text-transform: uppercase; }
+
+.btn-default {
+    padding: 12px 10%;
+    border: 1px solid #438e29;
+    border-radius: 5px
+}
+
+.btn-default:hover {
+  background-color:#438e29;
+  color: #fff; 
+}
+
+.btn-default:first-letter { text-transform: uppercase; }
+
+.btn-green {
+  padding: 12px 10%;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  display: inline-block;  
+  background-color: #438e29;
+  color: #fff;
+}
+
+.btn-green:hover {
+  border: 1px solid #438e29;
+  background-color: #fff;
+  color:#438e29;
+}
+
+.btn-green:first-letter { text-transform: uppercase; } 
+
+/*-----------------------*/
+
+/*-------banner-----------*/
+
+.banner {
+  background-image: url('../images/bg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.banner-content {
+  max-width: 915px;
+  padding: 120px 0;
+  margin: auto;
+  text-align: center;
+}
+
+.banner-content h2:first-letter { text-transform: uppercase; }
+.banner-content h2 { 
+  font-size: 45px; 
+  line-height: 55px;
+}
+
+.banner-content p {
+  margin: 30px 0 40PX;
+  font-size: 22px;
+}
+
+.banner-content nav { 
+  width: 70%;  
+  margin: auto;
+}
+
+.banner-content nav ul li {  display: inline-block; }
+
+.banner-content nav ul li a {
+  padding: 12px 27px;
+  margin: 10px 8px;
+  display: block;
+  font-size: 15px;
+}
+
+.banner-content form {
+  width: 67%;
+  margin:5px auto 0;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  position: relative;
+  text-align: center;
+}
+
+.banner-content form input[type="text"] {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 3% 0 3% 50px;  
+  border:none;
+  color: #ccc;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+}
+
+.banner-content form i {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left:10px;
+  color: #ccc;
+  transform: translateY(-50%);
+}
+
+/*----------------------------------*/
+
+/*-----------get inspired----------*/
+
+ h3 { 
+  font-size: 38px;
+  text-align: center; 
+  text-transform: capitalize;
+}
+
+.get-inspired .image {
+  box-sizing: border-box;
+  width: 65%;
+  padding: 3% 2% 2% 4%;
+  display:inline-block;
+}
+
+.get-inspired .content {
+  width: 30%;
+  display: inline-block;
+  text-align: center;
+}
+
+.get-inspired .content p {
+  padding: 5% 17%;
+  font-size: 20px;
+  line-height: 36px; 
+}
+
+.get-inspired .content a {
+  text-align: center;
+  display: inline-block;
+ }
+
+ #slider-img{ transition: ease-in 0.2s; }
+
+#slider-modal { 
+  margin: 0 2%; 
+  width: 3000px;
+    transition: ease-in 0.5s;Z
+} 
+
+.get-inspired .slider ul li { 
+  box-sizing: border-box;
+  width: 13%;
+  padding:0 1%;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+}
+
+.get-inspired .slider { 
+  position: relative;
+  overflow: hidden;
+}
+
+.slider .right-arrow {
+  position: absolute;
+  z-index: 2;
+  top:50%;
+  right:0;
+  font-size: 30px;
+}
+
+.slider .left-arrow {
+  position: absolute;
+  z-index: 2;
+  top:50%;
+  left:0;
+  font-size: 30px;
+}
+
+/*-------------------------------*/
+
+.how-it-works { background-color: #faf9fe; }
+
+.how-it-works .wrapper {
+  max-width: 640px;
+}
+
+.how-it-works h3 { padding: 6% 0; }
+
+.steps li { 
+  padding: 4% 0; 
+  cursor: pointer;
+}
+ 
+.steps li .step-img, .step-content { display: inline-block; }
+
+.steps li .step-img {
+  box-sizing: border-box;
+  width: 30%;
+  padding: 5% 0.5% 2%;
+  vertical-align: top;
+}
+
+.steps li .step-content{
+  box-sizing: border-box; 
+  width: 68%;
+  padding: 3%;
+}
+
+.step-content span {
+  padding: 1.5% 4%;
+  border: 1px solid #afacac;
+  border-radius: 50%;
+  color: #afacac;
+  font-size: 20px;
+}
+
+.step-content p { line-height: 26px; }
+
+.step-content .subheading {
+  padding:0;
+  margin: 7% 0;
+  font-size: 24px;
+}
+
+.steps li:nth-child(4):before {
+  content: " ";
+  height: 2px;
+  width:120px;
+  margin: auto;
+  display: block;
+  background-color: #ccc;
+} 
+
+.steps li:nth-child(2) .step-img { float: right; }
+
+.steps li:last-child .step-img { 
+  width: 18%;
+  padding: 7% 4%;
+  vertical-align: text-bottom;
+ }
+
+.steps li:last-child .step-content { width: 80%; }
+.steps li:last-child .subheading { 
+  text-transform: capitalize; 
+  margin: 8% 0 5%;
+}
+
+#popup {
+  height: 0;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(17,17,17,0.8);
+  transition: ease-in 0.5s;
+}
+
+#popup  .container {
+  width: 60%; 
+  margin: auto;
+  opacity: 1;
+  position: relative;
+  z-index: 3;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #fff;
+  transition: ease-in 1s;
+}
+
+
+#popup  .step-img {
+  box-sizing: border-box;
+  width: 30%;
+  padding: 5% 2.5% 2%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+#popup li .step-content{
+  box-sizing: border-box; 
+  width: 68%;
+  padding: 3%;
+}
+
+#popup .step-content span {
+  padding: 1.5% 3%;
+  border: 1px solid #afacac;
+  border-radius: 50%;
+  color: #afacac;
+  font-size: 20px;
+}
+
+#close {
+    display: block;
+    position: absolute;
+    right: -18px;
+    top: -15px;
+    color: #73ab62;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.step-content span {
+  padding: 1.5% 4%;
+  border: 1px solid #afacac;
+  border-radius: 50%;
+  color: #afacac;
+  font-size: 20px;
+}
+
+.step-content p { line-height: 26px; }
+
+.step-content .subheading {
+  padding:0;
+  margin: 7% 0;
+  font-size: 24px;
+}
+
+
+/*-------------------------------*/
+
+/*-------------------------------*/
+.testimonials {
+  padding: 20px 0;
+}
+
+.testimonials .slider ul li { 
+  display: inline-block; 
+  position: absolute;
+  top: 0; 
+  opacity: 0;
+  transition: opacity 0.5s; 
+}
+
+.testimonials .slider {
+  padding-bottom: 23%;
+  position: relative;
+ }
+
+ .testimonials .slider ul .active {
+  opacity: 1;
+  z-index: 1;
+ }
+
+.testimonials .slider .slider-img img { border-radius: 50%; }
+.testimonials h3 { padding-bottom: 70px; }
+
+.testimonials .slider .slider-img { 
+  box-sizing: border-box;
+  width: 30%;
+  padding: 0 4%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.testimonials .slider .slider-content {
+  width: 68%;
+  display: inline-block;
+}
+
+.testimonials .slider .slider-content p {
+  font-size: 18px;
+  line-height: 29px;
+  margin: 2% 0;
+}
+
+.testimonials .slider .slider-content span {
+  display: block;
+  padding: 5px 0;
+  text-transform: capitalize;
+}
+/*-------------------------------*/
+.client { background-color: #faf9fe; }
+
+.client ul li {
+  width: 22%;
+  padding: 16px;
+  display: inline-block;
+}
+
+/*-------------------------------*/
+
+/*-------------------------------*/
+
+.download {
+padding: 40px 0 0;
+background-image: url(../images/mobile_bg.jpg);
+}
+
+.download h3 { margin:20px 0; }
+
+.mob-image {
+width: 24%;
+display: inline-block;
+}
+
+.mob-content {
+  width: 70%;
+  display: inline-block;
+  text-align: center;
+}
+
+.mob-content ul li { display: inline-block; }
+
+.mob-content ul li img{ max-height: 43px;  }
+
+/*-------------------------------*/
+
+/*--------------------------------*/
+
+.get-help h3 { margin-bottom: 30px; }
+
+.get-help ul { 
+  width: 70%;  
+  margin: auto;
+  text-align: center;
+}
+
+.get-help ul li {  display: inline-block; }
+
+.get-help ul li a {
+  padding: 12px 27px;
+  margin: 10px 8px;
+  display: block;
+  font-size: 15px;
+}
+
+
+.get-help form {
+  width: 50%;
+  margin:30px auto 0;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  position: relative;
+  text-align: center;
+}
+
+.get-help form input[type="text"] {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 3% 0 3% 50px;  
+  border:none;
+  color: #ccc;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+}
+
+.get-help form i {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left:10px;
+  color: #ccc;
+  transform: translateY(-50%);
+}
+
+
+/*--------------------------------*/
+
+/*--------------------------------*/
+
+footer{
+  padding: 30px 0 13%;
+  background-color: #696f7c;
+  color: #979eac;
+}
+
+footer .wrapper>ul li { 
+  display: inline-block;
+  vertical-align: top;
+}
+
+footer .footer-items>li{ width: 33%; }
+footer .footer-items li>ul li { display: block; } 
+footer .footer-item .download-btn li{ display: inline-block; }
+footer a:first-letter { text-transform: uppercase; }
+footer h4:first-letter { text-transform: uppercase; }
+
+
+footer .footer-items li>ul li a{
+ padding:3px 0; 
+ display: inline-block; 
+ font-size: 18px;
+ font-weight: 500;
+} 
+
+footer a {
+  font-size: 20px;
+  color: #e9f2f4;
+  display: inline-block;
+}
+
+footer h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+footer a:hover { color: #9aff77; }
+footer .footer-top { padding-bottom: 20px; }
+
+footer .footer-top p {
+    font-size: 18px;
+    letter-spacing: 0.4px;
+    margin: 5px 0;
+}
+
+footer .footer-top a { 
+  font-size: 24px;
+  vertical-align: bottom;
+  padding: 0 15px;
+}
+
+footer .footer-top li:nth-child(3):before, footer .footer-top li:nth-child(3):after {
+  width: 2px;
+  height: 12px;
+  display:inline-block;
+  background-color: #535354;
+  transform: translateY(-2px);
+  content: " ";
+} 
+
+footer .footer-items .download-btn li { 
+  display: inline-block;
+  width: 48%;
+}
+footer .footer-items .download-btn li:last-child p { color:#fff; }
+footer .footer-items .download-btn li:last-child { max-height: 51px; }
+footer .footer-items ul li img { max-height: 45px; }
+footer .footer-items .download-btn { padding: 15px 0; } 
+
+/*------------------------*/
+
+@media screen and ( max-width:1184px ) {
+
+  .wrapper { padding: 0 10px; }
+ 
+  header h1 {
+    width: 160px; 
+    margin: auto;  
+    display: block;
+  }  
+}
